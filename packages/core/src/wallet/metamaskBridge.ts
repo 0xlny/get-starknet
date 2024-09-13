@@ -162,14 +162,14 @@ function createMetaMaskProviderWrapper(
         throw new Error("Wallet not enabled")
       }
       // @ts-ignore: Metamask currently doesn't support on method
-      return metaMaskSnapWallet.on(event, handleEvent)
+      return undefined; // return metaMaskSnapWallet.on(event, handleEvent)
     },
     off<E extends WalletEvents>(event: E["type"], handleEvent: E["handler"]) {
       if (!metaMaskSnapWallet) {
         throw new Error("Wallet not enabled")
       }
       // @ts-ignore: Metamask currently doesn't support off method
-      return metaMaskSnapWallet.off(event, handleEvent)
+      return undefined; // return metaMaskSnapWallet.off(event, handleEvent)
     },
   }
 
